@@ -1,0 +1,21 @@
+\begin{itemize}
+	\item 	Von 'overfitting' spricht man wenn ein neuronales Netz zu stark an einem Datensatz trainiert wird.
+		Dies führt dazu, dass nur noch sehr ähnliche Daten richtig klassifiziert werden können
+
+	\item 	'generalization' bezeichnet die Eigenschaft eines gut trainierten Netzes, möglichst allgemein Daten korrekt zu klassifizieren
+
+	\item 	Um ein neuronales Netz zu trainieren werden mehrere Schritte durchlaufen:
+		\begin{itemize}
+			\item Das Netz such nach Gemeinsamkeinten im trainings-set
+			\item alle gefundenen Regeln müssen auch im validation-set gelten
+			\item Im test-set sieht man schließlich die Qualität der gefunden Regeln
+		\end{itemize}
+		Anschließend können die Parameter modifiziert werden bis die Qualität ausreichend ist
+
+	\item 	Um ein overfitting zu vermeiden müssen die sets disjunkt sein
+		Im Beispiel wird die Hälfte der Daten als traings-set und die verbleibenden 2 viertel als test- und validation set benutzt.
+
+	\item 	Solange wie das Testset disjunkt mit dem Trainigsdaten ist, ist dies ausreichend.
+	 	In der Praxis lässt man mehrere Traings- und Testzyklen laufen und verwendet dabeit verschiedene Partionen der Daten (dabei sind traings- und test-set jedoch stests disjunkt!)
+
+\end{itemize}
