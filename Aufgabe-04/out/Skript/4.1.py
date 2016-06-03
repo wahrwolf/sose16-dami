@@ -6,7 +6,6 @@ import numpy
 A = numpy.array([1, 2, 3])
 
 # Task 1.ii)
-
 B = numpy.array([ [1, 2, 3], [4, 5, 6], [7, 8, 9] ])
 
 # Zeige alle Zeilen (:) und Spalten 1 bis exklusiv 3 (1:3)
@@ -21,6 +20,6 @@ D = numpy.ones( (3,1) ) * 5
 E = numpy.hstack( (B,D) )
 
 # Task i.v)
-# Ähnlich wie 1.iii benutzen wir numpy.zeros und den Dimensionsgrößen
+# Wie 1.iii benutzen wir numpy.zeros und den Dimensionsgrenzen
 F = numpy.zero( (2,3) )
 
