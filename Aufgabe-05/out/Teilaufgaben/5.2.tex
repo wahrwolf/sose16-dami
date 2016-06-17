@@ -1,0 +1,22 @@
+\begin{enumerate}
+
+	\item Als Repräsentation einer Lösung (also der Genotyp) ist eine Liste, in der alle Städete einmal vorkommen. Die Reihenfolge innerhalb der Liste bildet die Reihenfolge auf der Route ab.
+
+	\item Ein GA enthält folgende Schritte:
+	\begin{enumerate}
+		\item Die Kostenfunktion (oder auch Fittness-Funktion) gibt an wie gut die Lösung ist. Diese ist meist nominal und dient zum Sortieren von Entitäten. In unserem Beispiel ist dies die Laufzeit der Route.
+		\item In der Elternwahl (auch Partnerwahl), wird festgelegt wie sich Paare finden. Wählt man nur unter den einer Gruppe (z.b. den Stärksten, den Schwächsten ...) kann zu einer Überzüchtung führen. In unserem Beispiel werden die Partner zufällig gewählt. Zusätzlich wird die Fittness in der Verteilung berücksichtigt (z.B. wenn A 2x fitter ist als B, so hat A 2x mehr Partner).
+
+		\item Bei der Kreuzung des Genoms (oder auch der Vererbung) wird festgelegt wie sich der neue Genotyp zusammensetzt. Dies ist sehr abhängig von dem Aufbau des Problems. Hierbei muss gewährleistet werden, dass das neue Genom gültig ist. In unserem Beispiel werden die ersten k Stops zufällig von parent1 und der Rest von parent2 übernommen. 
+		\item Die Mutation sorgt für Diversität und steuert gegen eine Überzüchtung an. Ist sie zu dominant, findet kaum Optimierung statt, ist sie nicht stark genug, droht mangelde Divesität. In unserem Beispiel werden maximal 2 Stopps in der Reihenfolge vertauscht.
+
+		\item In der Auswahl der Überlebenden (oder auch Auslese) wird bestimmt welche Entitäten aus der gesamt Population entfernt/ersetzt werden. So wie das Kreuzen von Entitäten zu einer Vermehrung von starken Lösungen führt, führt die Auslese zum Wegfall von schwachen  Lösungen. Fallen zuviele Lösungen in einer Generation raus, droht mangelde Diversität, eine zu hohe Anzahl an schwachen Lösungen hemmt die Verbesserung. In unserem Fall werden die 2 Schwächsten Entitäten aussortiert.
+	\end{enumerate}
+	
+	\item Allgemein wird in der Parent Selection und der Mutation immer Zufall benutzt, in unserem außerdem in der Vererbung. (Für Erklärung siehe oben)
+
+	\item Die beste Lösung bekamen mit einer Mutationsrate von 99\% und einer Verebungswahrscheinlichkeit von 15\%. Die schlechte Lösung bekammen mit einer Mutationsrate von 15\% und einer Vererbungswahrscheinlichkeit von 99\%. Generell beobachteten wir: eine hohe Mutationsrate führt zu besseren Ergebnissen, wohingegen eine hohe Vererbungswahrscheinlichkeit zu konstanten Steigerungen führt.
+
+	\item Durch die Mutationsrate lassen wir zu, dass sich eventuelle bessere Lösungen finden, ohne dass wir schwache Lösungen in der Population behalten. Um diesen Effekt zu maximieren, kann die Anzahl der Generationen erhöht werden.
+
+\end{enumerate}
