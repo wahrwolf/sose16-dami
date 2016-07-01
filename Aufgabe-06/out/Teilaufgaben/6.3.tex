@@ -1,0 +1,65 @@
+[System]
+Name='Anwesenheit'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=17
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Interesse'
+Range=[0 10]
+NumMFs=3
+MF1='niedrig':'trimf',[-4 0 3]
+MF2='mittel':'gaussmf',[1.699 5]
+MF3='hoch':'trimf',[8 10 14]
+
+[Input2]
+Name='Unterlagen'
+Range=[0 10]
+NumMFs=3
+MF1='crap':'trimf',[-4 0 1.5]
+MF2='angemessen':'gaussmf',[1.79397563938388 5]
+MF3='herausragend':'trimf',[9 10 14.2]
+
+[Input3]
+Name='Dozent'
+Range=[0 10]
+NumMFs=4
+MF1='CRAP':'trimf',[-4 0 1]
+MF2='unzumutbar':'gaussmf',[1.14571777549057 2.6]
+MF3='angemessen':'gaussmf',[1.31038220615866 7.1]
+MF4='GEIL!':'trimf',[8.5 10 14]
+
+[Output1]
+Name='Anwesenheit'
+Range=[0 15]
+NumMFs=4
+MF1='kaum':'gaussmf',[1.419 -0.075]
+MF2='regelmäßig':'gaussmf',[2.7 8.17793388429752]
+MF3='stets':'trimf',[9.046 15 21]
+MF4='unregelmäßig':'gaussmf',[1.402 4.162]
+
+[Rules]
+1 1 1, 1 (1) : 2
+3 3 2, -2 (1) : 2
+2 2 3, 2 (0.5) : 2
+-3 2 4, 3 (1) : 1
+-3 -3 2, 1 (1) : 1
+3 1 4, 3 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 4 (1) : 1
+1 1 4, 4 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 4 (1) : 1
+2 1 3, 4 (1) : 1
+2 1 4, 2 (1) : 1
+3 1 1, 1 (1) : 1
+3 1 2, 4 (1) : 1
+3 1 3, 2 (1) : 1
+1 2 1, 1 (1) : 1
